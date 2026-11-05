@@ -89,7 +89,7 @@ namespace QuanLySinhVien.Forms
             timerClock_Tick(this, EventArgs.Empty);
 
             // Mặc định mở Bàn làm việc (Dashboard / Thống kê)
-            // Đang xây dựng dashboard tổng quan
+            OpenChildForm(new FrmStatistics(), btnDashboard, "📊 Bàn làm việc (Tổng quan)");
         }
 
         private void SetupSidebarButtons()
@@ -212,7 +212,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            // Đang xây dựng dashboard tổng quan
+            OpenChildForm(new FrmStatistics(), btnDashboard, "📊 Bàn làm việc (Tổng quan)");
         }
 
         private void btnStudents_Click(object sender, EventArgs e)
@@ -227,7 +227,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnSubjects_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Môn học đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmSubject(), btnSubjects, "📚 Quản lý Môn học & Học kỳ");
         }
 
         private void btnGrades_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Thống kê đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmStatistics(), btnStatistics, "📈 Thống kê & Báo cáo học vụ");
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
