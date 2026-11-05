@@ -222,7 +222,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnClasses_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Khoa & Lớp học đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmClassDepartment(), btnClasses, "🏫 Quản lý Khoa & Lớp học");
         }
 
         private void btnSubjects_Click(object sender, EventArgs e)
