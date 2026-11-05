@@ -217,7 +217,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý Sinh viên đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmStudent(), btnStudents, "👨‍🎓 Quản lý Sinh viên");
         }
 
         private void btnClasses_Click(object sender, EventArgs e)
