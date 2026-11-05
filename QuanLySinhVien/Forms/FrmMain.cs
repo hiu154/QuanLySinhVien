@@ -247,7 +247,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Nhật ký Hệ thống đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmSystemLogs(), btnLogs, "📜 Nhật ký Hệ thống (Chương 8 - Logging)");
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
