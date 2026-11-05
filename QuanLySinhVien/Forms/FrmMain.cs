@@ -227,7 +227,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnSubjects_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Môn học đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmSubject(), btnSubjects, "📚 Quản lý Môn học & Học kỳ");
         }
 
         private void btnGrades_Click(object sender, EventArgs e)
