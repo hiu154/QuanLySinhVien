@@ -242,7 +242,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý Tài khoản đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmUserAccount(), btnUsers, "👥 Quản lý Tài khoản & Phân quyền");
         }
 
         private void btnLogs_Click(object sender, EventArgs e)
