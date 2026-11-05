@@ -13,7 +13,10 @@ namespace QuanLySinhVien
             Application.SetCompatibleTextRenderingDefault(false);
 
             using var loginForm = new FrmLogin();
-            loginForm.ShowDialog();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FrmMain());
+            }
         }
     }
 }
