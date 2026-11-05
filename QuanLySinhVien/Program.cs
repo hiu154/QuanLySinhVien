@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using QuanLySinhVien.DAL;
+using QuanLySinhVien.Forms;
 
 namespace QuanLySinhVien
 {
@@ -12,16 +12,8 @@ namespace QuanLySinhVien
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Kiểm tra kết nối cơ sở dữ liệu khi khởi động
-            try
-            {
-                using var conn = DbConnectionFactory.CreateConnection();
-                conn.Open();
-            }
-            catch
-            {
-                // Cho phép tiếp tục nếu chưa có cấu hình DB
-            }
+            using var loginForm = new FrmLogin();
+            loginForm.ShowDialog();
         }
     }
 }
