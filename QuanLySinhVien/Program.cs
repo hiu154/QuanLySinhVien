@@ -1,0 +1,16 @@
+using System;
+using System.Windows.Forms;
+
+namespace QuanLySinhVien
+{
+    internal static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            // Khởi tạo các thành phần giao diện ban đầu
+        }
+    }
+}
