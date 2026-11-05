@@ -217,12 +217,12 @@ namespace QuanLySinhVien.Forms
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý Sinh viên đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmStudent(), btnStudents, "👨‍🎓 Quản lý Sinh viên");
         }
 
         private void btnClasses_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Khoa & Lớp học đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmClassDepartment(), btnClasses, "🏫 Quản lý Khoa & Lớp học");
         }
 
         private void btnSubjects_Click(object sender, EventArgs e)
@@ -242,12 +242,12 @@ namespace QuanLySinhVien.Forms
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý Tài khoản đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmUserAccount(), btnUsers, "👥 Quản lý Tài khoản & Phân quyền");
         }
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Nhật ký Hệ thống đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmSystemLogs(), btnLogs, "📜 Nhật ký Hệ thống (Chương 8 - Logging)");
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
