@@ -232,7 +232,7 @@ namespace QuanLySinhVien.Forms
 
         private void btnGrades_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý Điểm đang được xây dựng...", "Thông báo");
+            OpenChildForm(new FrmGrade(), btnGrades, "📝 Quản lý Điểm & Kết quả học tập");
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
