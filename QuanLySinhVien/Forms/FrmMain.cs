@@ -12,17 +12,21 @@ using QuanLySinhVien.BLL;
 
 using QuanLySinhVien.DTO;
 
-
-
 namespace QuanLySinhVien.Forms
 
 {
+
+
 
     public partial class FrmMain : Form
 
     {
 
+
+
         private Form? _currentChildForm;
+
+
 
         private Button? _currentActiveButton;
 
@@ -31,6 +35,8 @@ namespace QuanLySinhVien.Forms
         public FrmMain()
 
         {
+
+
 
             InitializeComponent();
 
@@ -44,11 +50,11 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             // Tùy biến vẽ Avatar và Thông tin người dùng trên thanh Sidebar
 
             pnlUserBanner.Paint += PnlUserBanner_Paint;
-
-
 
             // Đường phân cách dưới Top Header
 
@@ -56,13 +62,19 @@ namespace QuanLySinhVien.Forms
 
             {
 
+
+
                 using (var pen = new Pen(UiHelper.BorderColor, 1))
 
                 {
 
+
+
                     e.Graphics.DrawLine(pen, 0, pnlTopHeader.Height - 1, pnlTopHeader.Width, pnlTopHeader.Height - 1);
 
                 }
+
+
 
             };
 
@@ -74,13 +86,13 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             var g = e.Graphics;
 
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
             g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-
-
 
             var user = AuthBLL.CurrentUser;
 
@@ -88,13 +100,13 @@ namespace QuanLySinhVien.Forms
 
             string role = user?.Role ?? "Guest";
 
-
-
             // 1. Vẽ Avatar tròn có chữ viết tắt của người dùng
 
             Color avatarColor = role switch
 
             {
+
+
 
                 "Admin" => Color.FromArgb(79, 70, 229),      // Indigo
 
@@ -106,13 +118,9 @@ namespace QuanLySinhVien.Forms
 
             };
 
-
-
             var avatarRect = new Rectangle(16, 15, 42, 42);
 
             UiHelper.DrawAvatar(g, avatarRect, fullName, avatarColor);
-
-
 
             // 2. Tên đầy đủ
 
@@ -121,6 +129,8 @@ namespace QuanLySinhVien.Forms
             using (var whiteBrush = new SolidBrush(Color.White))
 
             {
+
+
 
                 var nameRect = new Rectangle(66, 15, 160, 20);
 
@@ -135,20 +145,12 @@ namespace QuanLySinhVien.Forms
             // 3. Huy hiệu vai trò (Role Pill Badge)
 
             string roleLabel = role switch
-
             {
-
-                "Admin" => "★ Quản trị viên",
-
-                "Teacher" => "◆ Giảng viên",
-
-                "Student" => "● Sinh viên",
-
+                "Admin" => "Quản trị viên",
+                "Teacher" => "Giảng viên",
+                "Student" => "Sinh viên",
                 _ => role
-
             };
-
-
 
             using (var roleFont = new Font("Segoe UI", 8F, FontStyle.Bold))
 
@@ -156,9 +158,13 @@ namespace QuanLySinhVien.Forms
 
             {
 
+
+
                 g.DrawString(roleLabel, roleFont, roleBrush, 66, 38);
 
             }
+
+
 
         }
 
@@ -168,6 +174,8 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             SetupSidebarButtons();
 
             UpdateUserInfo();
@@ -176,74 +184,65 @@ namespace QuanLySinhVien.Forms
 
             timerClock_Tick(this, EventArgs.Empty);
 
-
-
             // Mặc định mở Bàn làm việc (Dashboard / Thống kê)
 
-            OpenChildForm(new FrmStatistics(), btnDashboard, "❖ Bàn làm việc (Tổng quan)");
+            OpenChildForm(new FrmStatistics(), btnDashboard, "Bàn làm việc (Tổng quan)");
 
         }
 
 
 
-        private void SetupSidebarButtons()
-
+                private void SetupSidebarButtons()
         {
-
-            Button[] navButtons = { btnDashboard, btnStudents, btnClasses, btnSubjects, btnGrades, btnStatistics, btnUsers, btnLogs, btnChangePass, btnLogout };
-
-            foreach (var btn in navButtons)
-
+            var btnConfigs = new (Button btn, string iconName)[]
             {
+                (btnDashboard, "dashboard"),
+                (btnStudents, "students"),
+                (btnClasses, "classes"),
+                (btnSubjects, "subjects"),
+                (btnGrades, "grades"),
+                (btnStatistics, "statistics"),
+                (btnUsers, "users"),
+                (btnLogs, "logs"),
+                (btnChangePass, "changepass"),
+                (btnLogout, "logout")
+            };
 
+            foreach (var (btn, iconName) in btnConfigs)
+            {
                 btn.BackColor = Color.Transparent;
-
-                btn.ForeColor = UiHelper.SidebarText;
-
+                btn.ForeColor = (btn == btnLogout) ? Color.FromArgb(239, 68, 68) : UiHelper.SidebarText;
                 btn.Font = UiHelper.RegularFont;
-
                 btn.Cursor = Cursors.Hand;
+                btn.Padding = new Padding(16, 0, 0, 0);
+                btn.ImageAlign = ContentAlignment.MiddleLeft;
+                btn.TextAlign = ContentAlignment.MiddleLeft;
+                btn.TextImageRelation = TextImageRelation.ImageBeforeText;
 
-                btn.Padding = new Padding(18, 0, 0, 0);
-
-
+                Color iconColor = (btn == btnLogout) ? Color.FromArgb(239, 68, 68) : UiHelper.SidebarText;
+                btn.Image = UiHelper.CreateSidebarIcon(iconName, iconColor);
+                btn.Tag = iconName;
 
                 btn.MouseEnter += (s, e) =>
-
                 {
-
                     if (btn != _currentActiveButton && btn != btnLogout)
-
                     {
-
                         btn.BackColor = UiHelper.SidebarHover;
-
                         btn.ForeColor = Color.White;
-
+                        btn.Image = UiHelper.CreateSidebarIcon(iconName, Color.White);
                     }
-
                 };
-
-
 
                 btn.MouseLeave += (s, e) =>
-
                 {
-
                     if (btn != _currentActiveButton && btn != btnLogout)
-
                     {
-
                         btn.BackColor = Color.Transparent;
-
                         btn.ForeColor = UiHelper.SidebarText;
-
+                        btn.Image = UiHelper.CreateSidebarIcon(iconName, UiHelper.SidebarText);
                     }
-
                 };
-
             }
-
         }
 
 
@@ -252,17 +251,19 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             var user = AuthBLL.CurrentUser;
 
             if (user != null)
 
             {
 
+
+
                 lblUserName.Visible = false; // Đã vẽ trực tiếp đẹp mắt trong PnlUserBanner_Paint
 
                 lblUserRole.Visible = false;
-
-
 
                 lblStatusUser.Text = $"Người dùng: {user.Username} ({user.FullName})";
 
@@ -272,6 +273,8 @@ namespace QuanLySinhVien.Forms
 
             }
 
+
+
         }
 
 
@@ -280,11 +283,11 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             var user = AuthBLL.CurrentUser;
 
             if (user == null) return;
-
-
 
             // 1. Phục hồi toàn bộ các nút điều hướng về Visible = true trước
 
@@ -304,13 +307,13 @@ namespace QuanLySinhVien.Forms
 
             btnLogs.Visible = true;
 
-
-
             // 2. Ẩn nút theo đúng vai trò thực tế của người dùng
 
             if (user.IsTeacher)
 
             {
+
+
 
                 btnUsers.Visible = false;
 
@@ -318,9 +321,13 @@ namespace QuanLySinhVien.Forms
 
             }
 
+
+
             else if (user.IsStudent)
 
             {
+
+
 
                 btnClasses.Visible = false;
 
@@ -332,6 +339,8 @@ namespace QuanLySinhVien.Forms
 
             }
 
+
+
         }
 
 
@@ -340,9 +349,13 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             if (_currentChildForm != null)
 
             {
+
+
 
                 _currentChildForm.Close();
 
@@ -360,8 +373,6 @@ namespace QuanLySinhVien.Forms
 
             childForm.Dock = DockStyle.Fill;
 
-
-
             pnlContainer.Controls.Clear();
 
             pnlContainer.Controls.Add(childForm);
@@ -371,8 +382,6 @@ namespace QuanLySinhVien.Forms
             childForm.BringToFront();
 
             childForm.Show();
-
-
 
             lblPageTitle.Text = title;
 
@@ -386,9 +395,13 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             if (_currentActiveButton != null)
 
             {
+
+
 
                 _currentActiveButton.BackColor = Color.Transparent;
 
@@ -424,13 +437,19 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             if (sender is Button btn && btn == _currentActiveButton)
 
             {
 
+
+
                 using (var brush = new SolidBrush(UiHelper.Primary))
 
                 {
+
+
 
                     // Dải màu nhấn 4px Royal Blue ở mép trái nút đang chọn
 
@@ -438,7 +457,11 @@ namespace QuanLySinhVien.Forms
 
                 }
 
+
+
             }
+
+
 
         }
 
@@ -448,7 +471,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmStatistics(), btnDashboard, "❖ Bàn làm việc (Tổng quan)");
+
+
+            OpenChildForm(new FrmStatistics(), btnDashboard, "Bàn làm việc (Tổng quan)");
 
         }
 
@@ -458,7 +483,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmStudent(), btnStudents, "● Quản lý Sinh viên");
+
+
+            OpenChildForm(new FrmStudent(), btnStudents, "Quản lý Sinh viên");
 
         }
 
@@ -468,7 +495,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmClassDepartment(), btnClasses, "■ Quản lý Khoa & Lớp học");
+
+
+            OpenChildForm(new FrmClassDepartment(), btnClasses, "Quản lý Khoa & Lớp học");
 
         }
 
@@ -478,7 +507,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmSubject(), btnSubjects, "▲ Quản lý Môn học & Học kỳ");
+
+
+            OpenChildForm(new FrmSubject(), btnSubjects, "Quản lý Môn học & Học kỳ");
 
         }
 
@@ -488,7 +519,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmGrade(), btnGrades, "★ Quản lý Điểm & Kết quả học tập");
+
+
+            OpenChildForm(new FrmGrade(), btnGrades, "Quản lý Điểm số & Kết quả");
 
         }
 
@@ -498,7 +531,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmStatistics(), btnStatistics, "◆ Thống kê & Báo cáo học vụ");
+
+
+            OpenChildForm(new FrmStatistics(), btnStatistics, "Báo cáo & Thống kê học vụ");
 
         }
 
@@ -508,7 +543,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmUserAccount(), btnUsers, "👤 Quản lý Tài khoản & Phân quyền");
+
+
+            OpenChildForm(new FrmUserAccount(), btnUsers, "Quản lý Tài khoản & Phân quyền");
 
         }
 
@@ -518,7 +555,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            OpenChildForm(new FrmSystemLogs(), btnLogs, "≡ Nhật ký Hệ thống (Chương 8 - Logging)");
+
+
+            OpenChildForm(new FrmSystemLogs(), btnLogs, "Nhật ký Hệ thống");
 
         }
 
@@ -527,6 +566,8 @@ namespace QuanLySinhVien.Forms
         private void btnChangePass_Click(object sender, EventArgs e)
 
         {
+
+
 
             using var frm = new FrmChangePassword();
 
@@ -540,21 +581,25 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             if (UiHelper.Confirm("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?", "Xác nhận đăng xuất"))
 
             {
 
+
+
                 AuthBLL.Logout();
 
                 this.Hide();
-
-
 
                 using var login = new FrmLogin();
 
                 if (login.ShowDialog() == DialogResult.OK)
 
                 {
+
+
 
                     UpdateUserInfo();
 
@@ -566,15 +611,23 @@ namespace QuanLySinhVien.Forms
 
                 }
 
+
+
                 else
 
                 {
+
+
 
                     Application.Exit();
 
                 }
 
+
+
             }
+
+
 
         }
 
@@ -584,7 +637,9 @@ namespace QuanLySinhVien.Forms
 
         {
 
-            lblCurrentTime.Text = "⏱ " + DateTime.Now.ToString("dddd, dd/MM/yyyy • HH:mm:ss");
+
+
+            lblCurrentTime.Text = "Thời gian: " + DateTime.Now.ToString("dddd, dd/MM/yyyy • HH:mm:ss");
 
         }
 
@@ -594,31 +649,51 @@ namespace QuanLySinhVien.Forms
 
         {
 
+
+
             if (e.CloseReason == CloseReason.UserClosing)
 
             {
+
+
 
                 if (!UiHelper.Confirm("Bạn có chắc chắn muốn thoát khỏi ứng dụng Quản lý Sinh viên?", "Xác nhận thoát"))
 
                 {
 
+
+
                     e.Cancel = true;
 
                 }
+
+
 
                 else
 
                 {
 
+
+
                     AuthBLL.Logout();
 
                 }
 
+
+
             }
+
+
 
         }
 
+
+
     }
 
+
+
 }
+
+
 

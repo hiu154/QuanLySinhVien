@@ -3,82 +3,118 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
-
 namespace QuanLySinhVien.Forms
 {
+
     public static class UiHelper
     {
+
         // ==========================================
         // 1. MODERN COLOR PALETTE (Fluent / Tailwind Slate & Royal Blue)
         // ==========================================
+
         public static readonly Color Primary = Color.FromArgb(37, 99, 235);          // Royal Blue 600 (#2563EB)
+
         public static readonly Color PrimaryDark = Color.FromArgb(29, 78, 216);      // Blue 700 (#1D4ED8)
+
         public static readonly Color PrimaryLight = Color.FromArgb(239, 246, 255);   // Blue 50 (#EFF6FF)
+
         public static readonly Color PrimaryBorder = Color.FromArgb(191, 219, 254);  // Blue 200
 
         public static readonly Color Accent = Color.FromArgb(14, 165, 233);          // Sky Blue (#0EA5E9)
+
         public static readonly Color Success = Color.FromArgb(16, 185, 129);         // Emerald (#10B981)
+
         public static readonly Color SuccessDark = Color.FromArgb(5, 150, 105);      // Emerald 600 (#059669)
+
         public static readonly Color SuccessLight = Color.FromArgb(236, 253, 245);   // Emerald 50
 
         public static readonly Color Warning = Color.FromArgb(245, 158, 11);         // Amber (#F59E0B)
+
         public static readonly Color WarningDark = Color.FromArgb(217, 119, 6);      // Amber 600
+
         public static readonly Color WarningLight = Color.FromArgb(254, 243, 199);   // Amber 100
 
         public static readonly Color Danger = Color.FromArgb(239, 68, 68);           // Rose / Red (#EF4444)
+
         public static readonly Color DangerDark = Color.FromArgb(220, 38, 38);       // Red 600
+
         public static readonly Color DangerLight = Color.FromArgb(254, 242, 242);    // Red 50
-
         // Sidebar & Navigation Colors
+
         public static readonly Color SidebarBg = Color.FromArgb(15, 23, 42);         // Slate 900 (#0F172A)
+
         public static readonly Color SidebarCard = Color.FromArgb(30, 41, 59);       // Slate 800 (#1E293B)
+
         public static readonly Color SidebarHover = Color.FromArgb(51, 65, 85);      // Slate 700 (#334155)
+
         public static readonly Color SidebarActive = Color.FromArgb(37, 99, 235);    // Royal Blue (#2563EB)
+
         public static readonly Color SidebarText = Color.FromArgb(148, 163, 184);    // Slate 400 (#94A3B8)
+
         public static readonly Color SidebarTextActive = Color.White;
-
         // Content & Background Colors
+
         public static readonly Color ContentBg = Color.FromArgb(248, 250, 252);      // Slate 50 (#F8FAFC)
+
         public static readonly Color CardBg = Color.White;
+
         public static readonly Color BorderColor = Color.FromArgb(226, 232, 240);    // Slate 200 (#E2E8F0)
+
         public static readonly Color BorderDark = Color.FromArgb(203, 213, 225);     // Slate 300 (#CBD5E1)
-
         // Text Colors
+
         public static readonly Color TextPrimary = Color.FromArgb(15, 23, 42);       // Slate 900
+
         public static readonly Color TextSecondary = Color.FromArgb(71, 85, 105);    // Slate 600
+
         public static readonly Color TextMuted = Color.FromArgb(100, 116, 139);      // Slate 500
-
         // Compatibility aliases for existing references
-        public static readonly Color PrimaryColor = Primary;
-        public static readonly Color AccentColor = Accent;
-        public static readonly Color SuccessColor = SuccessDark;
-        public static readonly Color WarningColor = WarningDark;
-        public static readonly Color DangerColor = DangerDark;
 
+        public static readonly Color PrimaryColor = Primary;
+
+        public static readonly Color AccentColor = Accent;
+
+        public static readonly Color SuccessColor = SuccessDark;
+
+        public static readonly Color WarningColor = WarningDark;
+
+        public static readonly Color DangerColor = DangerDark;
         // ==========================================
         // 2. MODERN TYPOGRAPHY (Segoe UI)
         // ==========================================
-        public static readonly Font TitleFont = new Font("Segoe UI", 16F, FontStyle.Bold);
-        public static readonly Font HeaderFont = new Font("Segoe UI", 12F, FontStyle.Bold);
-        public static readonly Font SubHeaderFont = new Font("Segoe UI", 10.5F, FontStyle.Bold);
-        public static readonly Font RegularFont = new Font("Segoe UI", 9.5F, FontStyle.Regular);
-        public static readonly Font BoldFont = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        public static readonly Font SmallFont = new Font("Segoe UI", 8.5F, FontStyle.Regular);
-        public static readonly Font SmallBoldFont = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-        public static readonly Font KpiNumberFont = new Font("Segoe UI", 22F, FontStyle.Bold);
 
+        public static readonly Font TitleFont = new Font("Segoe UI", 16F, FontStyle.Bold);
+
+        public static readonly Font HeaderFont = new Font("Segoe UI", 12F, FontStyle.Bold);
+
+        public static readonly Font SubHeaderFont = new Font("Segoe UI", 10.5F, FontStyle.Bold);
+
+        public static readonly Font RegularFont = new Font("Segoe UI", 9.5F, FontStyle.Regular);
+
+        public static readonly Font BoldFont = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+
+        public static readonly Font SmallFont = new Font("Segoe UI", 8.5F, FontStyle.Regular);
+
+        public static readonly Font SmallBoldFont = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+
+        public static readonly Font KpiNumberFont = new Font("Segoe UI", 22F, FontStyle.Bold);
         // ==========================================
         // 3. DATAGRIDVIEW MODERN STYLING
         // ==========================================
+
         public static void StyleDataGridView(DataGridView dgv)
         {
+
             // 1. Chống giật lag và nhấp nháy khi cuộn bảng (DoubleBuffered qua reflection)
             try
             {
+
                 var prop = typeof(Control).GetProperty("DoubleBuffered",
                     System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
                 prop?.SetValue(dgv, true, null);
             }
+
             catch { }
 
             // 2. Cấu hình bảng hiển thị chuẩn mực và trải đều màn hình
@@ -98,7 +134,6 @@ namespace QuanLySinhVien.Forms
             dgv.RowTemplate.Height = 36;
             dgv.AllowUserToResizeRows = false;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             // 3. Tiêu đề bảng (Header) phong cách Tailwind Slate Dark sang trọng
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 41, 59); // Slate 800
@@ -108,14 +143,12 @@ namespace QuanLySinhVien.Forms
             dgv.ColumnHeadersDefaultCellStyle.Padding = new Padding(8, 6, 8, 6);
             dgv.ColumnHeadersHeight = 40;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-
             // 4. Dòng dữ liệu thông thường
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.FromArgb(15, 23, 42); // Slate 900
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(219, 234, 254); // Blue 100
             dgv.DefaultCellStyle.SelectionForeColor = Color.FromArgb(30, 58, 138);   // Blue 900
             dgv.DefaultCellStyle.Padding = new Padding(6, 4, 6, 4);
-
             // 5. Dòng xen kẽ (Zebra Striping)
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252); // Slate 50
             dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(219, 234, 254);
@@ -125,8 +158,10 @@ namespace QuanLySinhVien.Forms
         // ==========================================
         // 4. BUTTON MODERN STYLING
         // ==========================================
+
         public static void StylePrimaryButton(Button btn)
         {
+
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
             btn.BackColor = Primary;
@@ -139,6 +174,7 @@ namespace QuanLySinhVien.Forms
 
         public static void StyleSuccessButton(Button btn)
         {
+
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
             btn.BackColor = SuccessDark;
@@ -151,6 +187,7 @@ namespace QuanLySinhVien.Forms
 
         public static void StyleDangerButton(Button btn)
         {
+
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
             btn.BackColor = DangerDark;
@@ -163,6 +200,7 @@ namespace QuanLySinhVien.Forms
 
         public static void StyleWarningButton(Button btn)
         {
+
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
             btn.BackColor = WarningDark;
@@ -175,6 +213,7 @@ namespace QuanLySinhVien.Forms
 
         public static void StyleSecondaryButton(Button btn)
         {
+
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 1;
             btn.FlatAppearance.BorderColor = BorderDark;
@@ -189,67 +228,83 @@ namespace QuanLySinhVien.Forms
         // ==========================================
         // 5. CARD & PANEL STYLING
         // ==========================================
+
         public static void StyleCard(Panel panel, Color? accentBorderColor = null)
         {
+
             panel.BorderStyle = BorderStyle.None;
             panel.BackColor = CardBg;
             panel.Paint += (s, e) =>
             {
+
                 var g = e.Graphics;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
-
                 // Viền xung quanh
                 using (var pen = new Pen(BorderColor, 1f))
                 {
+
                     g.DrawRectangle(pen, 0, 0, panel.Width - 1, panel.Height - 1);
                 }
 
                 // Dải màu nhấn phía trên nếu có
                 if (accentBorderColor.HasValue)
                 {
+
                     using (var brush = new SolidBrush(accentBorderColor.Value))
                     {
+
                         g.FillRectangle(brush, 0, 0, panel.Width, 4);
                     }
+
                 }
+
             };
         }
 
         public static void StyleFilterBar(Panel panel)
         {
+
             panel.BorderStyle = BorderStyle.None;
             panel.BackColor = Color.White;
             panel.Paint += (s, e) =>
             {
+
                 var g = e.Graphics;
                 using (var pen = new Pen(BorderColor, 1f))
                 {
+
                     // Viền dưới ngăn cách giữa filter bar và content
                     g.DrawLine(pen, 0, panel.Height - 1, panel.Width, panel.Height - 1);
                 }
+
             };
         }
 
         public static void StyleTabControl(TabControl tc)
         {
+
             tc.Font = RegularFont;
             foreach (TabPage tp in tc.TabPages)
             {
+
                 tp.BackColor = ContentBg;
             }
+
         }
 
         // ==========================================
         // 6. AVATAR DRAWING HELPER
         // ==========================================
+
         public static void DrawAvatar(Graphics g, Rectangle rect, string fullName, Color bgColor)
         {
+
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-
             // Hình tròn nền
             using (var brush = new SolidBrush(bgColor))
             {
+
                 g.FillEllipse(brush, rect);
             }
 
@@ -257,6 +312,7 @@ namespace QuanLySinhVien.Forms
             string initials = "U";
             if (!string.IsNullOrWhiteSpace(fullName))
             {
+
                 var parts = fullName.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 if (parts.Length == 1)
                     initials = parts[0].Substring(0, Math.Min(2, parts[0].Length)).ToUpper();
@@ -268,20 +324,24 @@ namespace QuanLySinhVien.Forms
             using (var textBrush = new SolidBrush(Color.White))
             using (var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
+
                 g.DrawString(initials, font, textBrush, rect, sf);
             }
+
         }
 
         // ==========================================
         // 7. CELL FORMATTING HELPERS
         // ==========================================
+
         public static void FormatStatusCell(DataGridViewCellFormattingEventArgs e)
         {
+
             if (e.Value == null) return;
             string status = e.Value.ToString() ?? "";
-
             switch (status)
             {
+
                 case "Đang học":
                     e.CellStyle.ForeColor = Color.FromArgb(5, 150, 105);
                     e.CellStyle.Font = BoldFont;
@@ -300,29 +360,36 @@ namespace QuanLySinhVien.Forms
                     e.CellStyle.Font = BoldFont;
                     break;
             }
+
         }
 
         public static void FormatScoreCell(DataGridViewCellFormattingEventArgs e, decimal score)
         {
+
             if (score < 5.0m)
             {
+
                 e.CellStyle.ForeColor = DangerDark;
                 e.CellStyle.Font = BoldFont;
             }
+
             else if (score >= 8.5m)
             {
+
                 e.CellStyle.ForeColor = SuccessDark;
                 e.CellStyle.Font = BoldFont;
             }
+
         }
 
         public static void FormatRoleCell(DataGridViewCellFormattingEventArgs e)
         {
+
             if (e.Value == null) return;
             string role = e.Value.ToString() ?? "";
-
             switch (role)
             {
+
                 case "Admin":
                     e.CellStyle.ForeColor = Color.FromArgb(79, 70, 229);
                     e.CellStyle.Font = BoldFont;
@@ -336,15 +403,17 @@ namespace QuanLySinhVien.Forms
                     e.CellStyle.Font = BoldFont;
                     break;
             }
+
         }
 
         public static void FormatLogLevelCell(DataGridViewCellFormattingEventArgs e)
         {
+
             if (e.Value == null) return;
             string lvl = e.Value.ToString() ?? "";
-
             switch (lvl)
             {
+
                 case "Debug":
                     e.CellStyle.ForeColor = Color.FromArgb(100, 116, 139);
                     break;
@@ -366,34 +435,136 @@ namespace QuanLySinhVien.Forms
                     e.CellStyle.Font = BoldFont;
                     break;
             }
+
         }
 
         // ==========================================
         // 8. DIALOG NOTIFICATIONS
         // ==========================================
+
         public static void ShowSuccess(string message, string title = "Thành công")
         {
+
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void ShowInfo(string message, string title = "Thông báo")
         {
+
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void ShowWarning(string message, string title = "Cảnh báo")
         {
+
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public static void ShowError(string message, string title = "Lỗi hệ thống")
         {
+
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public static bool Confirm(string message, string title = "Xác nhận hành động")
         {
+
             return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
         }
+
+            // ==========================================
+        // 9. MODERN NATIVE VECTOR ICON GENERATOR (Anti-aliased GDI+)
+        // ==========================================
+
+        public static Bitmap CreateSidebarIcon(string name, Color color, int size = 18)
+        {
+
+            var bmp = new Bitmap(size, size);
+            using (var g = Graphics.FromImage(bmp))
+            {
+
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                using var pen = new Pen(color, 1.8f) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round };
+                using var brush = new SolidBrush(color);
+                switch (name.ToLowerInvariant())
+                {
+
+                    case "dashboard":
+                        // 4 modern tiles
+                        g.FillRectangle(brush, 1, 1, 6, 6);
+                        g.FillRectangle(brush, 10, 1, 7, 6);
+                        g.FillRectangle(brush, 1, 10, 7, 7);
+                        g.FillRectangle(brush, 10, 10, 6, 7);
+                        break;
+                    case "students":
+                        // Student graduation cap
+                        g.FillPolygon(brush, new Point[] { new Point(9, 2), new Point(17, 6), new Point(9, 10), new Point(1, 6) });
+                        g.DrawLine(pen, 15, 6, 15, 10);
+                        g.FillEllipse(brush, 5, 8, 8, 8);
+                        g.DrawArc(pen, 2, 11, 14, 6, 0, 180);
+                        break;
+                    case "classes":
+                        // School building
+                        g.FillPolygon(brush, new Point[] { new Point(9, 2), new Point(16, 6), new Point(2, 6) });
+                        g.FillRectangle(brush, 3, 7, 2, 8);
+                        g.FillRectangle(brush, 8, 7, 2, 8);
+                        g.FillRectangle(brush, 13, 7, 2, 8);
+                        g.FillRectangle(brush, 1, 15, 16, 2);
+                        break;
+                    case "subjects":
+                        // Notebook / Course book
+                        g.DrawRectangle(pen, 3, 2, 12, 14);
+                        g.DrawLine(pen, 6, 6, 12, 6);
+                        g.DrawLine(pen, 6, 9, 12, 9);
+                        g.DrawLine(pen, 6, 12, 10, 12);
+                        break;
+                    case "grades":
+                        // Scorecard with check
+                        g.DrawRectangle(pen, 2, 2, 13, 14);
+                        g.DrawLine(pen, 5, 9, 7, 12);
+                        g.DrawLine(pen, 7, 12, 12, 6);
+                        break;
+                    case "statistics":
+                        // 3-bar histogram chart
+                        g.FillRectangle(brush, 2, 9, 3, 7);
+                        g.FillRectangle(brush, 7, 5, 3, 11);
+                        g.FillRectangle(brush, 12, 2, 3, 14);
+                        g.DrawLine(pen, 1, 16, 16, 16);
+                        break;
+                    case "users":
+                        // User group
+                        g.FillEllipse(brush, 4, 3, 5, 5);
+                        g.FillPie(brush, 1, 8, 11, 10, 180, 180);
+                        g.FillEllipse(brush, 11, 4, 4, 4);
+                        g.FillPie(brush, 9, 9, 8, 8, 180, 180);
+                        break;
+                    case "logs":
+                        // Terminal console
+                        g.DrawRectangle(pen, 1, 2, 15, 13);
+                        g.DrawLine(pen, 4, 6, 7, 8);
+                        g.DrawLine(pen, 7, 8, 4, 10);
+                        g.DrawLine(pen, 9, 11, 13, 11);
+                        break;
+                    case "changepass":
+                        // Padlock
+                        g.DrawArc(pen, 5, 2, 7, 8, 180, 180);
+                        g.FillRectangle(brush, 3, 7, 11, 8);
+                        break;
+                    case "logout":
+                        // Exit door with arrow
+                        g.DrawRectangle(pen, 2, 2, 6, 13);
+                        g.DrawLine(pen, 7, 9, 15, 9);
+                        g.DrawLine(pen, 12, 6, 15, 9);
+                        g.DrawLine(pen, 12, 12, 15, 9);
+                        break;
+                }
+
+            }
+
+            return bmp;
+        }
+
     }
+
 }
