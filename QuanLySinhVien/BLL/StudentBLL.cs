@@ -150,12 +150,12 @@ namespace QuanLySinhVien.BLL
             if (s == null)
                 throw new ArgumentNullException(nameof(s), "Dữ liệu sinh viên không được rỗng.");
 
-            s.StudentCode = s.StudentCode.Trim();
-            s.FullName = s.FullName.Trim();
-            s.Email = s.Email.Trim();
+            s.StudentCode = s.StudentCode?.Trim() ?? string.Empty;
+            s.FullName = s.FullName?.Trim() ?? string.Empty;
+            s.Email = s.Email?.Trim() ?? string.Empty;
             s.PhoneNumber = s.PhoneNumber?.Trim();
             s.Address = s.Address?.Trim();
-            s.ClassID = s.ClassID.Trim();
+            s.ClassID = s.ClassID?.Trim() ?? string.Empty;
             s.Status = string.IsNullOrWhiteSpace(s.Status) ? "Đang học" : s.Status.Trim();
             s.Gender = string.IsNullOrWhiteSpace(s.Gender) ? "Nam" : s.Gender.Trim();
 
