@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using QuanLySinhVien.BLL;
+using QuanLySinhVien.DAL;
 using QuanLySinhVien.Forms;
 using QuanLySinhVien.Logging;
 
@@ -16,6 +17,16 @@ namespace QuanLySinhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // 0. Tự động kiểm tra và cấu hình kết nối SQL Server (Hỗ trợ chạy trên mọi máy tính)
+            try
+            {
+                DbConnectionFactory.AutoDetectAndFixConnection();
+            }
+            catch
+            {
+                // Bỏ qua để form Login xử lý tiếp nếu chưa có kết nối
+            }
 
             // 1. Khởi tạo dịch vụ ghi nhật ký (Logging - Chương 8)
             try

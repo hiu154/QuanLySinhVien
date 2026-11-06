@@ -365,6 +365,11 @@ namespace QuanLySinhVien.Forms
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public static void ShowInfo(string message, string title = "Thông báo")
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static void ShowWarning(string message, string title = "Cảnh báo")
         {
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);

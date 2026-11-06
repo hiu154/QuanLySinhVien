@@ -17,6 +17,8 @@ namespace QuanLySinhVien.Forms
         {
             pnlHero = new Panel();
             pnlRight = new Panel();
+            lblDbStatus = new Label();
+            btnDbConfig = new Button();
             pnlQuickRow = new Panel();
             btnQuickTeacher = new Button();
             btnQuickAdmin = new Button();
@@ -59,6 +61,8 @@ namespace QuanLySinhVien.Forms
             // pnlRight
             // 
             pnlRight.BackColor = Color.White;
+            pnlRight.Controls.Add(lblDbStatus);
+            pnlRight.Controls.Add(btnDbConfig);
             pnlRight.Controls.Add(pnlQuickRow);
             pnlRight.Controls.Add(lblOrDemo);
             pnlRight.Controls.Add(btnLogin);
@@ -75,6 +79,33 @@ namespace QuanLySinhVien.Forms
             pnlRight.Name = "pnlRight";
             pnlRight.Size = new Size(526, 560);
             pnlRight.TabIndex = 1;
+            // 
+            // lblDbStatus
+            // 
+            lblDbStatus.AutoSize = true;
+            lblDbStatus.Font = new Font("Segoe UI", 8.5F);
+            lblDbStatus.ForeColor = Color.FromArgb(100, 116, 139);
+            lblDbStatus.Location = new Point(55, 492);
+            lblDbStatus.Name = "lblDbStatus";
+            lblDbStatus.Size = new Size(180, 20);
+            lblDbStatus.TabIndex = 11;
+            lblDbStatus.Text = "🟢 CSDL: Đang kiểm tra...";
+            // 
+            // btnDbConfig
+            // 
+            btnDbConfig.BackColor = Color.FromArgb(248, 250, 252);
+            btnDbConfig.Cursor = Cursors.Hand;
+            btnDbConfig.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnDbConfig.FlatStyle = FlatStyle.Flat;
+            btnDbConfig.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            btnDbConfig.ForeColor = Color.FromArgb(71, 85, 105);
+            btnDbConfig.Location = new Point(335, 487);
+            btnDbConfig.Name = "btnDbConfig";
+            btnDbConfig.Size = new Size(130, 28);
+            btnDbConfig.TabIndex = 12;
+            btnDbConfig.Text = "⚙ Cấu hình CSDL";
+            btnDbConfig.UseVisualStyleBackColor = false;
+            btnDbConfig.Click += btnDbConfig_Click;
             // 
             // pnlQuickRow
             // 
@@ -198,14 +229,12 @@ namespace QuanLySinhVien.Forms
             btnToggleEye.BackColor = Color.Transparent;
             btnToggleEye.Cursor = Cursors.Hand;
             btnToggleEye.FlatAppearance.BorderSize = 0;
-            btnToggleEye.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnToggleEye.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnToggleEye.FlatStyle = FlatStyle.Flat;
-            btnToggleEye.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            btnToggleEye.ForeColor = Color.FromArgb(71, 85, 105);
-            btnToggleEye.Location = new Point(354, 4);
+            btnToggleEye.Font = new Font("Segoe UI", 8.5F);
+            btnToggleEye.ForeColor = Color.FromArgb(100, 116, 139);
+            btnToggleEye.Location = new Point(350, 4);
             btnToggleEye.Name = "btnToggleEye";
-            btnToggleEye.Size = new Size(50, 32);
+            btnToggleEye.Size = new Size(54, 32);
             btnToggleEye.TabIndex = 2;
             btnToggleEye.Text = "Hiện";
             btnToggleEye.UseVisualStyleBackColor = false;
@@ -213,37 +242,38 @@ namespace QuanLySinhVien.Forms
             // 
             // txtPassword
             // 
+            txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtPassword.BackColor = Color.FromArgb(248, 250, 252);
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Segoe UI", 11F);
-            txtPassword.ForeColor = Color.FromArgb(15, 23, 42);
-            txtPassword.Location = new Point(44, 10);
+            txtPassword.Location = new Point(45, 9);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
-            txtPassword.Size = new Size(304, 25);
+            txtPassword.PlaceholderText = "Nhập mật khẩu...";
+            txtPassword.Size = new Size(295, 25);
             txtPassword.TabIndex = 1;
             // 
             // lblPassIcon
             // 
-            lblPassIcon.Font = new Font("Segoe MDL2 Assets", 10F);
-            lblPassIcon.ForeColor = Color.FromArgb(100, 116, 139);
-            lblPassIcon.Location = new Point(8, 8);
+            lblPassIcon.AutoSize = true;
+            lblPassIcon.Font = new Font("Segoe UI", 11F);
+            lblPassIcon.ForeColor = Color.FromArgb(148, 163, 184);
+            lblPassIcon.Location = new Point(12, 8);
             lblPassIcon.Name = "lblPassIcon";
-            lblPassIcon.Size = new Size(28, 24);
+            lblPassIcon.Size = new Size(33, 25);
             lblPassIcon.TabIndex = 0;
-            lblPassIcon.Text = "\uE72E";
-            lblPassIcon.TextAlign = ContentAlignment.MiddleCenter;
+            lblPassIcon.Text = "🔒";
             // 
             // lblPassHeader
             // 
             lblPassHeader.AutoSize = true;
-            lblPassHeader.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblPassHeader.ForeColor = Color.FromArgb(71, 85, 105);
-            lblPassHeader.Location = new Point(55, 235);
+            lblPassHeader.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblPassHeader.ForeColor = Color.FromArgb(30, 41, 59);
+            lblPassHeader.Location = new Point(55, 228);
             lblPassHeader.Name = "lblPassHeader";
-            lblPassHeader.Size = new Size(84, 19);
+            lblPassHeader.Size = new Size(82, 21);
             lblPassHeader.TabIndex = 5;
-            lblPassHeader.Text = "MẬT KHẨU";
+            lblPassHeader.Text = "Mật khẩu";
             // 
             // pnlUserBox
             // 
@@ -258,56 +288,57 @@ namespace QuanLySinhVien.Forms
             // 
             // txtUsername
             // 
+            txtUsername.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtUsername.BackColor = Color.FromArgb(248, 250, 252);
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Font = new Font("Segoe UI", 11F);
-            txtUsername.ForeColor = Color.FromArgb(15, 23, 42);
-            txtUsername.Location = new Point(44, 10);
+            txtUsername.Location = new Point(45, 9);
             txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "admin hoặc mã sinh viên/giảng viên...";
             txtUsername.Size = new Size(350, 25);
             txtUsername.TabIndex = 1;
             // 
             // lblUserIcon
             // 
-            lblUserIcon.Font = new Font("Segoe MDL2 Assets", 10F);
-            lblUserIcon.ForeColor = Color.FromArgb(100, 116, 139);
-            lblUserIcon.Location = new Point(8, 8);
+            lblUserIcon.AutoSize = true;
+            lblUserIcon.Font = new Font("Segoe UI", 11F);
+            lblUserIcon.ForeColor = Color.FromArgb(148, 163, 184);
+            lblUserIcon.Location = new Point(12, 8);
             lblUserIcon.Name = "lblUserIcon";
-            lblUserIcon.Size = new Size(28, 24);
+            lblUserIcon.Size = new Size(33, 25);
             lblUserIcon.TabIndex = 0;
-            lblUserIcon.Text = "\uE77B";
-            lblUserIcon.TextAlign = ContentAlignment.MiddleCenter;
+            lblUserIcon.Text = "👤";
             // 
             // lblUserHeader
             // 
             lblUserHeader.AutoSize = true;
-            lblUserHeader.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblUserHeader.ForeColor = Color.FromArgb(71, 85, 105);
-            lblUserHeader.Location = new Point(55, 155);
+            lblUserHeader.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblUserHeader.ForeColor = Color.FromArgb(30, 41, 59);
+            lblUserHeader.Location = new Point(55, 148);
             lblUserHeader.Name = "lblUserHeader";
-            lblUserHeader.Size = new Size(216, 19);
+            lblUserHeader.Size = new Size(123, 21);
             lblUserHeader.TabIndex = 3;
-            lblUserHeader.Text = "TÀI KHOẢN / TÊN ĐĂNG NHẬP";
+            lblUserHeader.Text = "Tên đăng nhập";
             // 
             // lblSub
             // 
             lblSub.AutoSize = true;
             lblSub.Font = new Font("Segoe UI", 9.5F);
             lblSub.ForeColor = Color.FromArgb(100, 116, 139);
-            lblSub.Location = new Point(55, 105);
+            lblSub.Location = new Point(55, 102);
             lblSub.Name = "lblSub";
-            lblSub.Size = new Size(345, 21);
+            lblSub.Size = new Size(378, 21);
             lblSub.TabIndex = 2;
-            lblSub.Text = "Chào mừng bạn! Vui lòng đăng nhập để tiếp tục.";
+            lblSub.Text = "Hệ thống Quản lý Đào tạo & Điểm số Sinh viên chuẩn";
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(15, 23, 42);
-            lblTitle.Location = new Point(52, 65);
+            lblTitle.Location = new Point(53, 58);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(200, 46);
+            lblTitle.Size = new Size(174, 41);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Đăng Nhập";
             // 
@@ -318,53 +349,45 @@ namespace QuanLySinhVien.Forms
             pnlWindowControls.Dock = DockStyle.Top;
             pnlWindowControls.Location = new Point(0, 0);
             pnlWindowControls.Name = "pnlWindowControls";
-            pnlWindowControls.Size = new Size(526, 38);
+            pnlWindowControls.Size = new Size(526, 36);
             pnlWindowControls.TabIndex = 0;
             // 
             // btnMinimize
             // 
             btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimize.BackColor = Color.Transparent;
-            btnMinimize.Cursor = Cursors.Hand;
             btnMinimize.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnMinimize.Font = new Font("Segoe UI", 10F);
             btnMinimize.ForeColor = Color.FromArgb(100, 116, 139);
-            btnMinimize.Location = new Point(430, 0);
+            btnMinimize.Location = new Point(446, 0);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(46, 36);
+            btnMinimize.Size = new Size(40, 36);
             btnMinimize.TabIndex = 1;
             btnMinimize.Text = "─";
-            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.UseVisualStyleBackColor = true;
             btnMinimize.Click += btnMinimize_Click;
             // 
             // btnClose
             // 
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClose.BackColor = Color.Transparent;
-            btnClose.Cursor = Cursors.Hand;
             btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(239, 68, 68);
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 10F);
             btnClose.ForeColor = Color.FromArgb(100, 116, 139);
-            btnClose.Location = new Point(478, 0);
+            btnClose.Location = new Point(486, 0);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(46, 36);
+            btnClose.Size = new Size(40, 36);
             btnClose.TabIndex = 0;
             btnClose.Text = "✕";
-            btnClose.UseVisualStyleBackColor = false;
+            btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
-            btnClose.MouseEnter += btnClose_MouseEnter;
-            btnClose.MouseLeave += btnClose_MouseLeave;
             // 
             // FrmLogin
             // 
             AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(248, 250, 252);
+            BackColor = Color.White;
             ClientSize = new Size(880, 560);
             Controls.Add(pnlRight);
             Controls.Add(pnlHero);
@@ -387,7 +410,6 @@ namespace QuanLySinhVien.Forms
             pnlUserBox.PerformLayout();
             pnlWindowControls.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Panel pnlHero;
@@ -414,5 +436,7 @@ namespace QuanLySinhVien.Forms
         private System.Windows.Forms.Panel pnlQuickRow;
         private System.Windows.Forms.Button btnQuickAdmin;
         private System.Windows.Forms.Button btnQuickTeacher;
+        private System.Windows.Forms.Label lblDbStatus;
+        private System.Windows.Forms.Button btnDbConfig;
     }
 }

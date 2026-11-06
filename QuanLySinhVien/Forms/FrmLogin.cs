@@ -299,10 +299,41 @@ namespace QuanLySinhVien.Forms
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            
             txtUsername.Text = "admin";
             txtPassword.Text = "123456";
             txtUsername.Focus();
+            UpdateDbStatus();
+        }
+
+        private void UpdateDbStatus()
+        {
+            try
+            {
+                var test = DbConnectionFactory.TestConnection();
+                if (test.Success)
+                {
+                    string srv = DbConnectionFactory.GetServerFromConnectionString(DbConnectionFactory.ConnectionString);
+                    lblDbStatus.Text = $"🟢 CSDL: Sẵn sàng ({srv})";
+                    lblDbStatus.ForeColor = Color.FromArgb(22, 101, 52);
+                }
+                else
+                {
+                    lblDbStatus.Text = "🔴 CSDL: Chưa kết nối";
+                    lblDbStatus.ForeColor = Color.FromArgb(220, 38, 38);
+                }
+            }
+            catch
+            {
+                lblDbStatus.Text = "🔴 CSDL: Chưa kết nối";
+                lblDbStatus.ForeColor = Color.FromArgb(220, 38, 38);
+            }
+        }
+
+        private void btnDbConfig_Click(object? sender, EventArgs e)
+        {
+            using var frm = new FrmDbConfig();
+            frm.ShowDialog(this);
+            UpdateDbStatus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -347,7 +378,48 @@ namespace QuanLySinhVien.Forms
             }
             catch (SqlException ex)
             {
-                UiHelper.ShowError($"Lỗi kết nối cơ sở dữ liệu SQL Server: {ex.Message}\n\nHãy đảm bảo Database 'QuanLySinhVienDB' đã được khởi tạo.", "Lỗi Database");
+                UpdateDbStatus();
+
+                string msg = (ex.Number == 4060)
+                    ? "Cơ sở dữ liệu 'QuanLySinhVienDB' chưa được khởi tạo trên máy chủ SQL Server này.\n\nBạn có muốn hệ thống TỰ ĐỘNG KHỞI TẠO CSDL và nạp dữ liệu mẫu ban đầu ngay bây giờ không?"
+                    : $"Lỗi kết nối cơ sở dữ liệu SQL Server: {ex.Message}\n\nBạn có muốn hệ thống TỰ ĐỘNG TÌM KIẾM MÁY CHỦ và KHỞI TẠO CSDL không?";
+
+                var dlg = MessageBox.Show(msg, "Tự động sửa lỗi CSDL", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlg == DialogResult.Yes)
+                {
+                    try
+                    {
+                        btnLogin.Text = "Đang khởi tạo CSDL...";
+                        Application.DoEvents();
+
+                        var fixRes = DbConnectionFactory.AutoDetectAndFixConnection();
+                        if (fixRes.Success)
+                        {
+                            UpdateDbStatus();
+                            UiHelper.ShowInfo("Đã khởi tạo cơ sở dữ liệu QuanLySinhVienDB thành công!\nHệ thống sẽ tiến hành đăng nhập lại.");
+                            btnLogin.Text = "ĐĂNG NHẬP HỆ THỐNG  →";
+                            btnLogin.PerformClick();
+                            return;
+                        }
+                        else
+                        {
+                            UiHelper.ShowError(fixRes.Message, "Không thể tự động kết nối CSDL");
+                            using var frm = new FrmDbConfig();
+                            frm.ShowDialog(this);
+                            UpdateDbStatus();
+                        }
+                    }
+                    catch (Exception initEx)
+                    {
+                        UiHelper.ShowError($"Lỗi khi khởi tạo CSDL: {initEx.Message}");
+                    }
+                }
+                else
+                {
+                    using var frm = new FrmDbConfig();
+                    frm.ShowDialog(this);
+                    UpdateDbStatus();
+                }
             }
             catch (Exception ex)
             {
