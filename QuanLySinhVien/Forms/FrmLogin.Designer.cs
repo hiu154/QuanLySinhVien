@@ -89,7 +89,7 @@ namespace QuanLySinhVien.Forms
             lblDbStatus.Name = "lblDbStatus";
             lblDbStatus.Size = new Size(180, 20);
             lblDbStatus.TabIndex = 11;
-            lblDbStatus.Text = "🟢 CSDL: Đang kiểm tra...";
+            lblDbStatus.Text = "● CSDL: Đang kiểm tra...";
             // 
             // btnDbConfig
             // 

@@ -112,7 +112,7 @@ namespace QuanLySinhVien.Forms
             this.tabSubjects.Padding = new System.Windows.Forms.Padding(10);
             this.tabSubjects.Size = new System.Drawing.Size(1072, 620);
             this.tabSubjects.TabIndex = 0;
-            this.tabSubjects.Text = "📚 Danh mục Môn học";
+            this.tabSubjects.Text = "▲ Danh mục Môn học";
             this.tabSubjects.UseVisualStyleBackColor = true;
             // 
             // splitSubject
@@ -170,7 +170,7 @@ namespace QuanLySinhVien.Forms
             this.btnClearSubject.Name = "btnClearSubject";
             this.btnClearSubject.Size = new System.Drawing.Size(76, 34);
             this.btnClearSubject.TabIndex = 16;
-            this.btnClearSubject.Text = "Làm mới";
+            this.btnClearSubject.Text = "↻ Làm mới";
             this.btnClearSubject.UseVisualStyleBackColor = false;
             this.btnClearSubject.Click += new System.EventHandler(this.btnClearSubject_Click);
             // 
@@ -185,7 +185,7 @@ namespace QuanLySinhVien.Forms
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.Size = new System.Drawing.Size(72, 34);
             this.btnDeleteSubject.TabIndex = 15;
-            this.btnDeleteSubject.Text = "🗑️ Xóa";
+            this.btnDeleteSubject.Text = "✕ Xóa";
             this.btnDeleteSubject.UseVisualStyleBackColor = false;
             this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
@@ -200,7 +200,7 @@ namespace QuanLySinhVien.Forms
             this.btnUpdateSubject.Name = "btnUpdateSubject";
             this.btnUpdateSubject.Size = new System.Drawing.Size(68, 34);
             this.btnUpdateSubject.TabIndex = 14;
-            this.btnUpdateSubject.Text = "✏️ Sửa";
+            this.btnUpdateSubject.Text = "✎ Sửa";
             this.btnUpdateSubject.UseVisualStyleBackColor = false;
             this.btnUpdateSubject.Click += new System.EventHandler(this.btnUpdateSubject_Click);
             // 
@@ -215,7 +215,7 @@ namespace QuanLySinhVien.Forms
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.Size = new System.Drawing.Size(68, 34);
             this.btnAddSubject.TabIndex = 13;
-            this.btnAddSubject.Text = "➕ Thêm";
+            this.btnAddSubject.Text = "+ Thêm";
             this.btnAddSubject.UseVisualStyleBackColor = false;
             this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
             // 
@@ -404,7 +404,7 @@ namespace QuanLySinhVien.Forms
             this.tabSemesters.Padding = new System.Windows.Forms.Padding(10);
             this.tabSemesters.Size = new System.Drawing.Size(1072, 620);
             this.tabSemesters.TabIndex = 1;
-            this.tabSemesters.Text = "📅 Học kỳ & Năm học";
+            this.tabSemesters.Text = "▲ Học kỳ & Năm học";
             this.tabSemesters.UseVisualStyleBackColor = true;
             // 
             // splitSemester
@@ -462,7 +462,7 @@ namespace QuanLySinhVien.Forms
             this.btnSetCurrent.Name = "btnSetCurrent";
             this.btnSetCurrent.Size = new System.Drawing.Size(302, 34);
             this.btnSetCurrent.TabIndex = 15;
-            this.btnSetCurrent.Text = "⭐ Đặt làm Học kỳ Hiện tại";
+            this.btnSetCurrent.Text = "★ Đặt làm kỳ hiện tại";
             this.btnSetCurrent.UseVisualStyleBackColor = false;
             this.btnSetCurrent.Click += new System.EventHandler(this.btnSetCurrent_Click);
             // 
@@ -589,7 +589,7 @@ namespace QuanLySinhVien.Forms
             this.btnClearSemester.Name = "btnClearSemester";
             this.btnClearSemester.Size = new System.Drawing.Size(96, 34);
             this.btnClearSemester.TabIndex = 2;
-            this.btnClearSemester.Text = "Làm mới";
+            this.btnClearSemester.Text = "↻ Làm mới";
             this.btnClearSemester.UseVisualStyleBackColor = false;
             this.btnClearSemester.Click += new System.EventHandler(this.btnClearSemester_Click);
             // 
@@ -604,7 +604,7 @@ namespace QuanLySinhVien.Forms
             this.btnUpdateSemester.Name = "btnUpdateSemester";
             this.btnUpdateSemester.Size = new System.Drawing.Size(96, 34);
             this.btnUpdateSemester.TabIndex = 1;
-            this.btnUpdateSemester.Text = "✏️ Sửa";
+            this.btnUpdateSemester.Text = "✎ Sửa";
             this.btnUpdateSemester.UseVisualStyleBackColor = false;
             this.btnUpdateSemester.Click += new System.EventHandler(this.btnUpdateSemester_Click);
             // 
@@ -619,7 +619,7 @@ namespace QuanLySinhVien.Forms
             this.btnAddSemester.Name = "btnAddSemester";
             this.btnAddSemester.Size = new System.Drawing.Size(96, 34);
             this.btnAddSemester.TabIndex = 0;
-            this.btnAddSemester.Text = "➕ Thêm";
+            this.btnAddSemester.Text = "+ Thêm";
             this.btnAddSemester.UseVisualStyleBackColor = false;
             this.btnAddSemester.Click += new System.EventHandler(this.btnAddSemester_Click);
             // 
@@ -642,7 +642,7 @@ namespace QuanLySinhVien.Forms
             this.tabEnrollments.Padding = new System.Windows.Forms.Padding(10);
             this.tabEnrollments.Size = new System.Drawing.Size(1072, 620);
             this.tabEnrollments.TabIndex = 2;
-            this.tabEnrollments.Text = "📝 Đăng ký Môn học theo Học kỳ";
+            this.tabEnrollments.Text = "▲ Đăng ký Môn học";
             this.tabEnrollments.UseVisualStyleBackColor = true;
             // 
             // pnlEnrollTop
@@ -675,7 +675,7 @@ namespace QuanLySinhVien.Forms
             this.btnCancelEnroll.Name = "btnCancelEnroll";
             this.btnCancelEnroll.Size = new System.Drawing.Size(130, 32);
             this.btnCancelEnroll.TabIndex = 7;
-            this.btnCancelEnroll.Text = "❌ Hủy đăng ký";
+            this.btnCancelEnroll.Text = "✕ Hủy đăng ký";
             this.btnCancelEnroll.UseVisualStyleBackColor = false;
             this.btnCancelEnroll.Click += new System.EventHandler(this.btnCancelEnroll_Click);
             // 
@@ -690,7 +690,7 @@ namespace QuanLySinhVien.Forms
             this.btnEnroll.Name = "btnEnroll";
             this.btnEnroll.Size = new System.Drawing.Size(135, 32);
             this.btnEnroll.TabIndex = 6;
-            this.btnEnroll.Text = "➕ Đăng ký môn";
+            this.btnEnroll.Text = "+ Đăng ký môn";
             this.btnEnroll.UseVisualStyleBackColor = false;
             this.btnEnroll.Click += new System.EventHandler(this.btnEnroll_Click);
             // 

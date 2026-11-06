@@ -313,18 +313,18 @@ namespace QuanLySinhVien.Forms
                 if (test.Success)
                 {
                     string srv = DbConnectionFactory.GetServerFromConnectionString(DbConnectionFactory.ConnectionString);
-                    lblDbStatus.Text = $"🟢 CSDL: Sẵn sàng ({srv})";
+                    lblDbStatus.Text = $"● CSDL: Sẵn sàng ({srv})";
                     lblDbStatus.ForeColor = Color.FromArgb(22, 101, 52);
                 }
                 else
                 {
-                    lblDbStatus.Text = "🔴 CSDL: Chưa kết nối";
+                    lblDbStatus.Text = "● CSDL: Chưa kết nối";
                     lblDbStatus.ForeColor = Color.FromArgb(220, 38, 38);
                 }
             }
             catch
             {
-                lblDbStatus.Text = "🔴 CSDL: Chưa kết nối";
+                lblDbStatus.Text = "● CSDL: Chưa kết nối";
                 lblDbStatus.ForeColor = Color.FromArgb(220, 38, 38);
             }
         }

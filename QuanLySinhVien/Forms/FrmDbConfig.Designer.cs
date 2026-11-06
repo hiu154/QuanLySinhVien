@@ -61,7 +61,7 @@ namespace QuanLySinhVien.Forms
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(390, 30);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "🛠 CẤU HÌNH & KHỞI TẠO SQL SERVER";
+            lblTitle.Text = "CẤU HÌNH & KHỞI TẠO SQL SERVER";
             // 
             // lblSub
             // 
@@ -255,7 +255,7 @@ namespace QuanLySinhVien.Forms
             btnTest.Name = "btnTest";
             btnTest.Size = new Size(230, 38);
             btnTest.TabIndex = 9;
-            btnTest.Text = "🔌 Kiểm tra kết nối";
+            btnTest.Text = "Kiểm tra kết nối";
             btnTest.UseVisualStyleBackColor = false;
             btnTest.Click += btnTest_Click;
             // 
@@ -271,7 +271,7 @@ namespace QuanLySinhVien.Forms
             btnAutoInit.Name = "btnAutoInit";
             btnAutoInit.Size = new Size(240, 38);
             btnAutoInit.TabIndex = 10;
-            btnAutoInit.Text = "🚀 TỰ ĐỘNG TẠO CSDL MỚI";
+            btnAutoInit.Text = "TỰ ĐỘNG TẠO CSDL MỚI";
             btnAutoInit.UseVisualStyleBackColor = false;
             btnAutoInit.Click += btnAutoInit_Click;
             // 
@@ -300,7 +300,7 @@ namespace QuanLySinhVien.Forms
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(490, 42);
             btnSave.TabIndex = 12;
-            btnSave.Text = "💾 LƯU CẤU HÌNH VÀ BẮT ĐẦU SỬ DỤNG";
+            btnSave.Text = "✓ LƯU CẤU HÌNH VÀ SỬ DỤNG";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 

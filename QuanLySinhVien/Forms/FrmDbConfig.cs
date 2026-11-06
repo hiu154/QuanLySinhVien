@@ -94,13 +94,13 @@ namespace QuanLySinhVien.Forms
             if (res.Success)
             {
                 lblStatus.ForeColor = Color.FromArgb(16, 185, 129);
-                lblStatus.Text = "🟢 Trạng thái: CSDL 'QuanLySinhVienDB' đã sẵn sàng hoạt động!";
+                lblStatus.Text = "● Trạng thái: CSDL 'QuanLySinhVienDB' đã sẵn sàng hoạt động!";
                 IsConnectionSuccessful = true;
             }
             else
             {
                 lblStatus.ForeColor = Color.FromArgb(239, 68, 68);
-                lblStatus.Text = "🟡 Trạng thái: " + res.Message;
+                lblStatus.Text = "● Trạng thái: " + res.Message;
                 IsConnectionSuccessful = false;
             }
         }
@@ -118,14 +118,14 @@ namespace QuanLySinhVien.Forms
             if (res.Success)
             {
                 lblStatus.ForeColor = Color.FromArgb(16, 185, 129);
-                lblStatus.Text = "🟢 Kết nối THÀNH CÔNG tới CSDL 'QuanLySinhVienDB'!";
+                lblStatus.Text = "● Kết nối THÀNH CÔNG tới CSDL 'QuanLySinhVienDB'!";
                 IsConnectionSuccessful = true;
                 UiHelper.ShowSuccess("Kết nối cơ sở dữ liệu thành công! Bạn có thể lưu và đăng nhập.");
             }
             else
             {
                 lblStatus.ForeColor = Color.FromArgb(239, 68, 68);
-                lblStatus.Text = "🔴 " + res.Message;
+                lblStatus.Text = "● " + res.Message;
                 IsConnectionSuccessful = false;
 
                 // Kiểm tra xem có phải do chưa tạo DB không
@@ -153,14 +153,14 @@ namespace QuanLySinhVien.Forms
             {
                 cboServer.Text = autoRes.WorkingServer;
                 lblStatus.ForeColor = Color.FromArgb(16, 185, 129);
-                lblStatus.Text = "🟢 " + autoRes.Message;
+                lblStatus.Text = "● " + autoRes.Message;
                 IsConnectionSuccessful = true;
                 UiHelper.ShowSuccess(autoRes.Message);
             }
             else
             {
                 lblStatus.ForeColor = Color.FromArgb(239, 68, 68);
-                lblStatus.Text = "🔴 " + autoRes.Message;
+                lblStatus.Text = "● " + autoRes.Message;
                 UiHelper.ShowWarning("Không tìm thấy instance SQL Server tự động. Vui lòng nhập tên Server thủ công hoặc kiểm tra dịch vụ SQL Server đã chạy chưa.");
             }
 
@@ -199,14 +199,14 @@ namespace QuanLySinhVien.Forms
             if (res.Success)
             {
                 lblStatus.ForeColor = Color.FromArgb(16, 185, 129);
-                lblStatus.Text = "🟢 " + res.Message;
+                lblStatus.Text = "● " + res.Message;
                 IsConnectionSuccessful = true;
                 UiHelper.ShowSuccess(res.Message + "\n\nBạn có thể đăng nhập ngay bằng tài khoản:\n• Quản trị viên: admin / 123456\n• Giảng viên: gv_khoacntt / 123456");
             }
             else
             {
                 lblStatus.ForeColor = Color.FromArgb(239, 68, 68);
-                lblStatus.Text = "🔴 " + res.Message;
+                lblStatus.Text = "● " + res.Message;
                 UiHelper.ShowError(res.Message);
             }
 

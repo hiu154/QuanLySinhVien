@@ -109,7 +109,7 @@ namespace QuanLySinhVien.Forms
             this.btnResetPass.Name = "btnResetPass";
             this.btnResetPass.Size = new System.Drawing.Size(294, 32);
             this.btnResetPass.TabIndex = 20;
-            this.btnResetPass.Text = "🔑 Đặt lại mật khẩu về mặc định (123456)";
+            this.btnResetPass.Text = "↺ Đặt lại mật khẩu mặc định (123456)";
             this.btnResetPass.UseVisualStyleBackColor = false;
             this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
@@ -123,7 +123,7 @@ namespace QuanLySinhVien.Forms
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(74, 34);
             this.btnClear.TabIndex = 19;
-            this.btnClear.Text = "🔄 Mới";
+            this.btnClear.Text = "↻ Mới";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -138,7 +138,7 @@ namespace QuanLySinhVien.Forms
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 34);
             this.btnDelete.TabIndex = 18;
-            this.btnDelete.Text = "🗑️ Xóa";
+            this.btnDelete.Text = "✕ Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -153,7 +153,7 @@ namespace QuanLySinhVien.Forms
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(66, 34);
             this.btnUpdate.TabIndex = 17;
-            this.btnUpdate.Text = "✏️ Sửa";
+            this.btnUpdate.Text = "✎ Sửa";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -168,7 +168,7 @@ namespace QuanLySinhVien.Forms
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(64, 34);
             this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "➕ Thêm";
+            this.btnAdd.Text = "+ Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 

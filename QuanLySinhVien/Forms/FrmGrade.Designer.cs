@@ -93,7 +93,7 @@ namespace QuanLySinhVien.Forms
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(113, 30);
             this.btnExportExcel.TabIndex = 9;
-            this.btnExportExcel.Text = "📥 Xuất bảng điểm";
+            this.btnExportExcel.Text = "⤓ Xuất bảng điểm";
             this.btnExportExcel.UseVisualStyleBackColor = false;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
@@ -255,7 +255,7 @@ namespace QuanLySinhVien.Forms
             this.btnSaveGrade.Name = "btnSaveGrade";
             this.btnSaveGrade.Size = new System.Drawing.Size(302, 38);
             this.btnSaveGrade.TabIndex = 15;
-            this.btnSaveGrade.Text = "💾 LƯU KẾT QUẢ ĐIỂM";
+            this.btnSaveGrade.Text = "✓ LƯU KẾT QUẢ ĐIỂM";
             this.btnSaveGrade.UseVisualStyleBackColor = false;
             this.btnSaveGrade.Click += new System.EventHandler(this.btnSaveGrade_Click);
             // 

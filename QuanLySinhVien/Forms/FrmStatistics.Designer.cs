@@ -104,7 +104,7 @@ namespace QuanLySinhVien.Forms
             this.btnExportReport.Name = "btnExportReport";
             this.btnExportReport.Size = new System.Drawing.Size(123, 35);
             this.btnExportReport.TabIndex = 6;
-            this.btnExportReport.Text = "📥 Xuất Excel";
+            this.btnExportReport.Text = "⤓ Xuất Excel";
             this.btnExportReport.UseVisualStyleBackColor = false;
             this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
             // 
@@ -316,7 +316,7 @@ namespace QuanLySinhVien.Forms
             this.tabWarning.Padding = new System.Windows.Forms.Padding(10);
             this.tabWarning.Size = new System.Drawing.Size(1072, 510);
             this.tabWarning.TabIndex = 0;
-            this.tabWarning.Text = "⚠️ Cảnh báo Học vụ (Điểm thấp / Rớt môn)";
+            this.tabWarning.Text = "⚠ Cảnh báo Học vụ (Điểm thấp / Rớt môn)";
             this.tabWarning.UseVisualStyleBackColor = true;
             // 
             // dgvWarning
@@ -355,7 +355,7 @@ namespace QuanLySinhVien.Forms
             this.btnExportWarning.Name = "btnExportWarning";
             this.btnExportWarning.Size = new System.Drawing.Size(148, 30);
             this.btnExportWarning.TabIndex = 3;
-            this.btnExportWarning.Text = "📥 Xuất DS Cảnh báo";
+            this.btnExportWarning.Text = "⤓ Xuất DS Cảnh báo";
             this.btnExportWarning.UseVisualStyleBackColor = false;
             this.btnExportWarning.Click += new System.EventHandler(this.btnExportWarning_Click);
             // 
@@ -414,7 +414,7 @@ namespace QuanLySinhVien.Forms
             this.tabGPA.Padding = new System.Windows.Forms.Padding(10);
             this.tabGPA.Size = new System.Drawing.Size(1072, 510);
             this.tabGPA.TabIndex = 1;
-            this.tabGPA.Text = "📈 Bảng Tổng kết GPA & Xếp loại Toàn trường";
+            this.tabGPA.Text = "◆ Bảng Tổng kết GPA & Xếp loại";
             this.tabGPA.UseVisualStyleBackColor = true;
             // 
             // dgvStudentGPA
@@ -451,7 +451,7 @@ namespace QuanLySinhVien.Forms
             this.btnExportGPA.Name = "btnExportGPA";
             this.btnExportGPA.Size = new System.Drawing.Size(148, 30);
             this.btnExportGPA.TabIndex = 1;
-            this.btnExportGPA.Text = "📥 Xuất Bảng Điểm GPA";
+            this.btnExportGPA.Text = "⤓ Xuất Bảng Điểm GPA";
             this.btnExportGPA.UseVisualStyleBackColor = false;
             this.btnExportGPA.Click += new System.EventHandler(this.btnExportGPA_Click);
             // 
@@ -474,7 +474,7 @@ namespace QuanLySinhVien.Forms
             this.tabDistribution.Padding = new System.Windows.Forms.Padding(10);
             this.tabDistribution.Size = new System.Drawing.Size(1072, 510);
             this.tabDistribution.TabIndex = 2;
-            this.tabDistribution.Text = "📊 Phân bố Sinh viên theo Khoa & Trạng thái";
+            this.tabDistribution.Text = "◆ Phân bố Sinh viên theo Khoa & Trạng thái";
             this.tabDistribution.UseVisualStyleBackColor = true;
             // 
             // splitDistribution
@@ -516,7 +516,7 @@ namespace QuanLySinhVien.Forms
             this.lblDeptStatsTitle.Name = "lblDeptStatsTitle";
             this.lblDeptStatsTitle.Size = new System.Drawing.Size(508, 35);
             this.lblDeptStatsTitle.TabIndex = 0;
-            this.lblDeptStatsTitle.Text = "🏢 Số lượng sinh viên theo Khoa:";
+            this.lblDeptStatsTitle.Text = "■ Số lượng sinh viên theo Khoa:";
             this.lblDeptStatsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgvStatusStats
@@ -537,7 +537,7 @@ namespace QuanLySinhVien.Forms
             this.lblStatusStatsTitle.Name = "lblStatusStatsTitle";
             this.lblStatusStatsTitle.Size = new System.Drawing.Size(516, 35);
             this.lblStatusStatsTitle.TabIndex = 0;
-            this.lblStatusStatsTitle.Text = "📌 Số lượng sinh viên theo Trạng thái học tập:";
+            this.lblStatusStatsTitle.Text = "■ Số lượng sinh viên theo Trạng thái:";
             this.lblStatusStatsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmStatistics

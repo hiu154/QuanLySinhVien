@@ -196,7 +196,7 @@ namespace QuanLySinhVien.Forms
                 _warningList = _gradeBll.GetLowScoreStudents(threshold);
                 dgvWarning.DataSource = null;
                 dgvWarning.DataSource = _warningList;
-                tabWarning.Text = $"⚠️ Cảnh báo Học vụ ({_warningList.Count} kết quả)";
+                tabWarning.Text = $"⚠ Cảnh báo Học vụ ({_warningList.Count} kết quả)";
 
                 // 3. Overall Student GPA Summaries
                 _gpaList = _statsBll.GetStudentGPASummaries();
@@ -230,7 +230,7 @@ namespace QuanLySinhVien.Forms
                 _warningList = _gradeBll.GetLowScoreStudents(numWarningThreshold.Value);
                 dgvWarning.DataSource = null;
                 dgvWarning.DataSource = _warningList;
-                tabWarning.Text = $"⚠️ Cảnh báo Học vụ ({_warningList.Count} kết quả)";
+                tabWarning.Text = $"⚠ Cảnh báo Học vụ ({_warningList.Count} kết quả)";
             }
             catch (Exception ex)
             {

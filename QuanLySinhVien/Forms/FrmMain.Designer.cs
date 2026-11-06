@@ -85,7 +85,7 @@ namespace QuanLySinhVien.Forms
             this.btnLogout.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(240, 44);
             this.btnLogout.TabIndex = 11;
-            this.btnLogout.Text = "🚪   Đăng xuất";
+            this.btnLogout.Text = "➔   Đăng xuất";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -123,7 +123,7 @@ namespace QuanLySinhVien.Forms
             this.btnLogs.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnLogs.Size = new System.Drawing.Size(240, 44);
             this.btnLogs.TabIndex = 9;
-            this.btnLogs.Text = "📜   Nhật ký hệ thống";
+            this.btnLogs.Text = "≡   Nhật ký hệ thống";
             this.btnLogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogs.UseVisualStyleBackColor = true;
             this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
@@ -142,7 +142,7 @@ namespace QuanLySinhVien.Forms
             this.btnUsers.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(240, 44);
             this.btnUsers.TabIndex = 8;
-            this.btnUsers.Text = "👥   Quản lý tài khoản";
+            this.btnUsers.Text = "👤   Quản lý tài khoản";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
@@ -161,7 +161,7 @@ namespace QuanLySinhVien.Forms
             this.btnStatistics.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnStatistics.Size = new System.Drawing.Size(240, 44);
             this.btnStatistics.TabIndex = 7;
-            this.btnStatistics.Text = "📈   Thống kê && Báo cáo";
+            this.btnStatistics.Text = "◆   Thống kê && Báo cáo";
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistics.UseVisualStyleBackColor = true;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
@@ -180,7 +180,7 @@ namespace QuanLySinhVien.Forms
             this.btnGrades.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnGrades.Size = new System.Drawing.Size(240, 44);
             this.btnGrades.TabIndex = 6;
-            this.btnGrades.Text = "📝   Điểm && Kết quả";
+            this.btnGrades.Text = "★   Điểm && Kết quả";
             this.btnGrades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGrades.UseVisualStyleBackColor = true;
             this.btnGrades.Click += new System.EventHandler(this.btnGrades_Click);
@@ -199,7 +199,7 @@ namespace QuanLySinhVien.Forms
             this.btnSubjects.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnSubjects.Size = new System.Drawing.Size(240, 44);
             this.btnSubjects.TabIndex = 5;
-            this.btnSubjects.Text = "📚   Môn học && Học kỳ";
+            this.btnSubjects.Text = "▲   Môn học && Học kỳ";
             this.btnSubjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubjects.UseVisualStyleBackColor = true;
             this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
@@ -218,7 +218,7 @@ namespace QuanLySinhVien.Forms
             this.btnClasses.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnClasses.Size = new System.Drawing.Size(240, 44);
             this.btnClasses.TabIndex = 4;
-            this.btnClasses.Text = "🏫   Khoa && Lớp học";
+            this.btnClasses.Text = "■   Khoa && Lớp học";
             this.btnClasses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClasses.UseVisualStyleBackColor = true;
             this.btnClasses.Click += new System.EventHandler(this.btnClasses_Click);
@@ -237,7 +237,7 @@ namespace QuanLySinhVien.Forms
             this.btnStudents.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnStudents.Size = new System.Drawing.Size(240, 44);
             this.btnStudents.TabIndex = 3;
-            this.btnStudents.Text = "👨‍🎓   Quản lý Sinh viên";
+            this.btnStudents.Text = "●   Quản lý Sinh viên";
             this.btnStudents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStudents.UseVisualStyleBackColor = true;
             this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
@@ -256,7 +256,7 @@ namespace QuanLySinhVien.Forms
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(240, 44);
             this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "📊   Bàn làm việc";
+            this.btnDashboard.Text = "❖   Bàn làm việc";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -326,7 +326,7 @@ namespace QuanLySinhVien.Forms
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(155, 25);
             this.lblBrand.TabIndex = 0;
-            this.lblBrand.Text = "🎓 QLSV SYSTEM";
+            this.lblBrand.Text = "★ QLSV SYSTEM";
             // 
             // pnlTopHeader
             // 
@@ -364,7 +364,7 @@ namespace QuanLySinhVien.Forms
             this.lblDbStatus.Name = "lblDbStatus";
             this.lblDbStatus.Size = new System.Drawing.Size(181, 15);
             this.lblDbStatus.TabIndex = 1;
-            this.lblDbStatus.Text = "🟢 SQL Server: Đang hoạt động";
+            this.lblDbStatus.Text = "● SQL Server: Đang hoạt động";
             // 
             // lblPageTitle
             // 
@@ -375,7 +375,7 @@ namespace QuanLySinhVien.Forms
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(157, 25);
             this.lblPageTitle.TabIndex = 0;
-            this.lblPageTitle.Text = "📊 Bàn làm việc";
+            this.lblPageTitle.Text = "❖ Bàn làm việc";
             // 
             // pnlContainer
             // 

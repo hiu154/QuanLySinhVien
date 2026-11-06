@@ -95,7 +95,7 @@ namespace QuanLySinhVien.Forms
             this.tabClasses.Padding = new System.Windows.Forms.Padding(10);
             this.tabClasses.Size = new System.Drawing.Size(1072, 620);
             this.tabClasses.TabIndex = 0;
-            this.tabClasses.Text = "🏫 Quản lý Lớp học";
+            this.tabClasses.Text = "■ Quản lý Lớp học";
             this.tabClasses.UseVisualStyleBackColor = true;
             // 
             // splitClass
@@ -152,7 +152,7 @@ namespace QuanLySinhVien.Forms
             this.btnClearClass.Name = "btnClearClass";
             this.btnClearClass.Size = new System.Drawing.Size(78, 34);
             this.btnClearClass.TabIndex = 14;
-            this.btnClearClass.Text = "Làm mới";
+            this.btnClearClass.Text = "↻ Làm mới";
             this.btnClearClass.UseVisualStyleBackColor = false;
             this.btnClearClass.Click += new System.EventHandler(this.btnClearClass_Click);
             // 
@@ -167,7 +167,7 @@ namespace QuanLySinhVien.Forms
             this.btnDeleteClass.Name = "btnDeleteClass";
             this.btnDeleteClass.Size = new System.Drawing.Size(72, 34);
             this.btnDeleteClass.TabIndex = 13;
-            this.btnDeleteClass.Text = "🗑️ Xóa";
+            this.btnDeleteClass.Text = "✕ Xóa";
             this.btnDeleteClass.UseVisualStyleBackColor = false;
             this.btnDeleteClass.Click += new System.EventHandler(this.btnDeleteClass_Click);
             // 
@@ -182,7 +182,7 @@ namespace QuanLySinhVien.Forms
             this.btnUpdateClass.Name = "btnUpdateClass";
             this.btnUpdateClass.Size = new System.Drawing.Size(68, 34);
             this.btnUpdateClass.TabIndex = 12;
-            this.btnUpdateClass.Text = "✏️ Sửa";
+            this.btnUpdateClass.Text = "✎ Sửa";
             this.btnUpdateClass.UseVisualStyleBackColor = false;
             this.btnUpdateClass.Click += new System.EventHandler(this.btnUpdateClass_Click);
             // 
@@ -197,7 +197,7 @@ namespace QuanLySinhVien.Forms
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(68, 34);
             this.btnAddClass.TabIndex = 11;
-            this.btnAddClass.Text = "➕ Thêm";
+            this.btnAddClass.Text = "+ Thêm";
             this.btnAddClass.UseVisualStyleBackColor = false;
             this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
             // 
@@ -342,7 +342,7 @@ namespace QuanLySinhVien.Forms
             this.btnMoveStudent.Name = "btnMoveStudent";
             this.btnMoveStudent.Size = new System.Drawing.Size(118, 28);
             this.btnMoveStudent.TabIndex = 4;
-            this.btnMoveStudent.Text = "➡️ Chuyển lớp";
+            this.btnMoveStudent.Text = "⇄ Chuyển lớp";
             this.btnMoveStudent.UseVisualStyleBackColor = false;
             this.btnMoveStudent.Click += new System.EventHandler(this.btnMoveStudent_Click);
             // 
@@ -398,7 +398,7 @@ namespace QuanLySinhVien.Forms
             this.tabDepartments.Padding = new System.Windows.Forms.Padding(10);
             this.tabDepartments.Size = new System.Drawing.Size(1072, 620);
             this.tabDepartments.TabIndex = 1;
-            this.tabDepartments.Text = "🏢 Quản lý Khoa";
+            this.tabDepartments.Text = "■ Quản lý Khoa";
             this.tabDepartments.UseVisualStyleBackColor = true;
             // 
             // splitDept
@@ -450,7 +450,7 @@ namespace QuanLySinhVien.Forms
             this.btnClearDept.Name = "btnClearDept";
             this.btnClearDept.Size = new System.Drawing.Size(78, 34);
             this.btnClearDept.TabIndex = 10;
-            this.btnClearDept.Text = "Làm mới";
+            this.btnClearDept.Text = "↻ Làm mới";
             this.btnClearDept.UseVisualStyleBackColor = false;
             this.btnClearDept.Click += new System.EventHandler(this.btnClearDept_Click);
             // 
@@ -465,7 +465,7 @@ namespace QuanLySinhVien.Forms
             this.btnDeleteDept.Name = "btnDeleteDept";
             this.btnDeleteDept.Size = new System.Drawing.Size(72, 34);
             this.btnDeleteDept.TabIndex = 9;
-            this.btnDeleteDept.Text = "🗑️ Xóa";
+            this.btnDeleteDept.Text = "✕ Xóa";
             this.btnDeleteDept.UseVisualStyleBackColor = false;
             this.btnDeleteDept.Click += new System.EventHandler(this.btnDeleteDept_Click);
             // 
@@ -480,7 +480,7 @@ namespace QuanLySinhVien.Forms
             this.btnUpdateDept.Name = "btnUpdateDept";
             this.btnUpdateDept.Size = new System.Drawing.Size(68, 34);
             this.btnUpdateDept.TabIndex = 8;
-            this.btnUpdateDept.Text = "✏️ Sửa";
+            this.btnUpdateDept.Text = "✎ Sửa";
             this.btnUpdateDept.UseVisualStyleBackColor = false;
             this.btnUpdateDept.Click += new System.EventHandler(this.btnUpdateDept_Click);
             // 
@@ -495,7 +495,7 @@ namespace QuanLySinhVien.Forms
             this.btnAddDept.Name = "btnAddDept";
             this.btnAddDept.Size = new System.Drawing.Size(68, 34);
             this.btnAddDept.TabIndex = 7;
-            this.btnAddDept.Text = "➕ Thêm";
+            this.btnAddDept.Text = "+ Thêm";
             this.btnAddDept.UseVisualStyleBackColor = false;
             this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
             // 

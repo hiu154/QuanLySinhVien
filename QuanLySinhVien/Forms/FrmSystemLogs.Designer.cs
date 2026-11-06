@@ -71,7 +71,7 @@ namespace QuanLySinhVien.Forms
             this.btnExportLog.Name = "btnExportLog";
             this.btnExportLog.Size = new System.Drawing.Size(113, 30);
             this.btnExportLog.TabIndex = 10;
-            this.btnExportLog.Text = "📥 Xuất file text";
+            this.btnExportLog.Text = "⤓ Xuất file text";
             this.btnExportLog.UseVisualStyleBackColor = false;
             this.btnExportLog.Click += new System.EventHandler(this.btnExportLog_Click);
             // 
@@ -87,7 +87,7 @@ namespace QuanLySinhVien.Forms
             this.btnClearOld.Name = "btnClearOld";
             this.btnClearOld.Size = new System.Drawing.Size(118, 30);
             this.btnClearOld.TabIndex = 9;
-            this.btnClearOld.Text = "🗑️ Dọn log cũ";
+            this.btnClearOld.Text = "✕ Dọn log cũ";
             this.btnClearOld.UseVisualStyleBackColor = false;
             this.btnClearOld.Click += new System.EventHandler(this.btnClearOld_Click);
             // 
@@ -102,7 +102,7 @@ namespace QuanLySinhVien.Forms
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(85, 30);
             this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.Text = "🔄 Lọc";
+            this.btnRefresh.Text = "↻ Lọc";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
